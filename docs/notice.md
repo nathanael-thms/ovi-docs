@@ -2,6 +2,8 @@
 icon: lucide/info
 ---
 
+# Notice(As required by Apache License 2.0)
+
 ovi (OpenVINO Interface)
 Copyright 2026 Nathanael Thomas
 
