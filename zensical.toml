@@ -49,6 +49,7 @@ Copyright &copy; 2026 Nathanael Thomas
 # Read more: https://zensical.org/docs/setup/navigation/
 nav = [
   { "Introduction" = "index.md" },
+  { "Notice" = "notice.md" },
   { "License" = "license.md" }
 ]
 

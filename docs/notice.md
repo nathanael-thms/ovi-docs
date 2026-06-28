@@ -1,0 +1,17 @@
+---
+icon: lucide/info
+---
+
+ovi (OpenVINO Interface)
+Copyright 2026 Nathanael Thomas
+
+This product includes software developed by the ovi project 
+and its contributors. It is licensed under the Apache License 2.0.
+
+This project utilizes third-party dependencies installed via PyPI. 
+Please refer to requirements.txt for the specific dependencies installed. 
+These dependencies are governed by their respective open-source licenses.
+
+Disclaimer: This project is an independent, community-driven tool and 
+is not in any way affiliated with, sponsored by, or endorsed by Intel Corporation. 
+Intel and OpenVINO are trademarks of Intel Corporation or its subsidiaries.
