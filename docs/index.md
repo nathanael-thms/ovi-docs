@@ -4,19 +4,30 @@ icon: lucide/house
 
 # Introduction
 
-ovi is a lightweight local model server designed to provide an ollama-style developer experience, natively optimized using Intel's OpenVINO toolkit. 
+ovi is a lightweight local model server that delivers an ollama‑style developer experience, built natively on Intel’s OpenVINO runtime for efficient CPU and GPU inference.
 
-The project is currently in the earliest stages of development.
+ovi is in early development. Core functionality is usable, but the project is evolving rapidly as the runtime and CLI mature.
+
+## Current Features
+- **Local Execution** — Run raw OpenVINO‑format models directly from your `project_root/models/` directory.
+
+- **Familiar CLI** — A clean, drop‑in alternative to ollama using intuitive commands like ovi run.
+
+- **Interactive Chat Shell** — Navigate previous prompts using ↑/↓ for a smooth REPL‑style workflow.
 
 ## Upcoming Features
+- **Custom Modelfiles** — Define execution devices, context length, warm‑duration, and other runtime parameters.
 
-- **Local Execution**: Launch raw OpenVINO format models from your `project_root/models/` directory.
-- **Familiar CLI**: Drop-in alternative to ollama using clean terminal syntax like `ovi run`.
-- **Ecosystem Support**: Native OpenAI-compatible API endpoints for plug-and-play integration with Open WebUI.
+- **Device Selection** — Load models onto CPU, iGPU, dGPU, or other OpenVINO‑supported targets.
 
-ovi is completely free, open-source, and licensed under the Apache License 2.0.
+- **Internal /x Command Interface** — Inspect and adjust runtime parameters from within the chat shell.
+
+- **OpenAI‑Compatible API** — Native endpoints for seamless integration with tools like Open WebUI.
+
+ovi is fully free, open‑source, and licensed under the Apache License 2.0.
 
 ---
 
 !!! warning "Disclaimer"
-    *ovi* is an independent, community-driven tool and is not in any way affiliated with, sponsored by, or endorsed by Intel Corporation. Intel and OpenVINO are trademarks of Intel Corporation or its subsidiaries.
+     ovi is an independent, community‑driven project and is not affiliated with Intel Corporation.
+    Intel and OpenVINO are trademarks of Intel Corporation or its subsidiaries.
