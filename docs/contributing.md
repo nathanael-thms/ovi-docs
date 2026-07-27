@@ -6,6 +6,8 @@ icon: lucide/git-pull-request
 
 Thank you for your interest in contributing to ovi!
 
+If you don’t have time to contribute code or documentation, that’s completely fine — even starring the repository helps others discover ovi and is genuinely appreciated.
+
 ## Reporting bugs and security issues
 
 - Open a GitHub issue for any bugs, feature requests, or general problems.
