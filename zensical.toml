@@ -50,6 +50,7 @@ Copyright &copy; 2026 Nathanael Thomas
 nav = [
   { "Introduction" = "index.md" },
   { "Usage" = "usage.md" },
+  { "Models" = "models.md" },
   { "Contributing" = "contributing.md" },
   { "Security" = "security.md" },
   { "Notice" = "notice.md" },
