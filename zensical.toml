@@ -51,6 +51,7 @@ nav = [
   { "Introduction" = "index.md" },
   { "Usage" = "usage.md" },
   { "Models" = "models.md" },
+  { "Chat" = "chat.md" },
   { "Contributing" = "contributing.md" },
   { "Security" = "security.md" },
   { "Notice" = "notice.md" },
