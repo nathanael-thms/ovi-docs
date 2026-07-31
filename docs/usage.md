@@ -33,7 +33,7 @@ More detailed info on each option follows.
 
 ### Launch a model
 
-This calls the model menu, similar to the main menu, but with a list of models.
+This calls the model menu, as explained in [running models via model menu](models.md#running-via-model-menu) similar to the main menu, but with a list of models.
 !!! warning
     This displays every directory in the `project_root/models` folder. After the model loader checks for `openvino_model.xml`, if not found an error will be thrown
 
