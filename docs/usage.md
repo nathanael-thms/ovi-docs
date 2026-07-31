@@ -17,7 +17,16 @@ Available flags and options for the `ovi` command:
 
 ## Running without flags/options
 
-Running without any options or flags shows a menu in the terminal, navigated by arrow keys and enter, more detailed info on each option follows.
+Running without any options or flags shows a menu in the terminal this is navigated by arrow keys and enter, the menu will look like the following:
+```
+↑/↓ navigate • ← back • enter launch • esc/q quit.
+============================================================
+
+ ▸ Launch a model
+   Exit
+```
+
+More detailed info on each option follows.
 
 !!! note
     The terminal must be at least 20 columns wide and 8 rows tall, for the menu to display properly. the minimum size for the model menu is 20 × (number of models + 6)
