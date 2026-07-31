@@ -8,7 +8,9 @@ Models are placed in the `project_root/models` directory
 
 ## Requirements
 
-The model must be a raw OpenVINO IR model, containing an `openvino_model.xml`. The name of the model is the name used to run it. For example if you have `project_root/demo-model-int4/openvino_model.xml`, you would use `ovi run demo-model-int4` or use the menu to select it
+- The model must be a raw OpenVINO IR model, containing an `openvino_model.xml`. The name of the model is the name used to run it. For example if you have `project_root/demo-model-int4/openvino_model.xml`, you would use `ovi run demo-model-int4` or use the menu to select it
+
+- The model must not be named `Back` or `Exit`
 
 ## Pulling models
 
