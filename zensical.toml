@@ -37,7 +37,10 @@ site_url = ""
 #
 # Read more: https://zensical.org/docs/setup/basics/#copyright
 copyright = """
-Copyright &copy; 2026 Nathanael Thomas
+Copyright &copy; 2026 Nathanael Thomas —
+<a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">
+CC BY-SA 4.0
+</a>
 """
 
 # Zensical supports both implicit navigation and explicitly defined navigation.
