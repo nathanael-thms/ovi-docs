@@ -52,6 +52,7 @@ CC BY-SA 4.0
 # Read more: https://zensical.org/docs/setup/navigation/
 nav = [
   { "Introduction" = "index.md" },
+  { "Install/Update" = "installation.md" },
   { "Usage" = "usage.md" },
   { "Models" = "models.md" },
   { "Chat" = "chat.md" },
