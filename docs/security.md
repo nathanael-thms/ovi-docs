@@ -6,7 +6,9 @@ icon: lucide/shield-check
 
 ## Supported Versions
 
-When the first release is published, a table will be shown here
+| Version | Supported                 |
+| ------- | --------------------------|
+| 0.1.x   | :fontawesome-solid-check: |
 
 ## Reporting a vulnerability
 
