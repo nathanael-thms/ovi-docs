@@ -8,8 +8,8 @@
 
 [project]
 
-repo_url = ""
-repo_name = ""
+repo_url = "https://github.com/nathanael-thms/ovi"
+repo_name = "nathanael-thms/ovi"
 
 # The site_name is shown in the page header and the browser window title
 #
