@@ -80,4 +80,4 @@ Lines that begin with a `#` will be ignored, the syntax is `setting=value`, ther
 
 Lines that are not any of these will be ignored, currently only the following setting is supported:
 
-- `DEVICE`, set this setting to either CPU, NPU, GPU, or other OpenVINO-supported targets, eg: `DEVICE=GPU`
+- `DEVICE`, set this setting to either CPU, NPU, GPU, or other OpenVINO-supported targets, eg: `DEVICE=GPU`. If omitted, ovi defaults to `CPU`
