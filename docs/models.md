@@ -34,7 +34,7 @@ Ultimately you can download the models from anywhere, as long as they are in Ope
 
 ## Running models
 
-In the next minor release, running via GPU, NPU etc will be supported. Currently it can only run via CPU
+The model can be run via any OpenVINO‑supported targets, such as CPU, NPU and GPU, target selection is explained in [available settings](#available-settings)
 
 !!! warning
     Attempting to run a model without an IR graph(`openvino_model.xml`) will throw an error.
@@ -67,3 +67,17 @@ You are now connected to your model!
 Alternatively you can simply run `ovi run {model name}`, where model name is the name of the directory of the model you want to run.
 
 This achieves the same outcome as [running via model menu](#running-via-model-menu)
+
+## Modelfiles
+
+In the current release, the modelfile is used only to define the device the model should run on, in later releases they will be used for other settings and parameters.
+
+### Syntax
+
+Lines that begin with a `#` will be ignored, the syntax is `setting=value`, there should be no spaces before or after the `=`
+
+### Available settings
+
+Lines that are not any of these will be ignored, currently only the following setting is supported:
+
+- `DEVICE`, set this setting to either CPU, NPU, GPU, or other OpenVINO-supported targets, eg: `DEVICE=GPU`. If omitted, ovi defaults to `CPU`

@@ -15,10 +15,10 @@ ovi is in early development. Core functionality is usable, but the project is ev
 
 - **Interactive Chat Shell** — Navigate previous prompts using ↑/↓ for a smooth REPL‑style workflow.
 
+- **Device Selection** — Load models onto CPU, iGPU, dGPU, or other OpenVINO‑supported targets.
+
 ## Upcoming Features
 - **Custom Modelfiles** — Define execution devices, context length, warm‑duration, and other runtime parameters.
-
-- **Device Selection** — Load models onto CPU, iGPU, dGPU, or other OpenVINO‑supported targets.
 
 - **Internal /x Command Interface** — Inspect and adjust runtime parameters from within the chat shell.
 
