@@ -57,6 +57,7 @@ nav = [
   { "Models" = "models.md" },
   { "Chat" = "chat.md" },
   { "Contributing" = "contributing.md" },
+  { "Code Of Conduct" = "conduct.md" },
   { "Security" = "security.md" },
   { "Notice" = "notice.md" },
   { "License" = "license.md" }
