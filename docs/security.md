@@ -7,8 +7,9 @@ icon: lucide/shield-check
 ## Supported Versions
 
 | Version | Supported                 |
-| ------- | --------------------------|
-| 0.1.x   | :fontawesome-solid-check: |
+|---------| --------------------------|
+| 0.2.x   | :fontawesome-solid-check: |
+| 0.1.x   | :fontawesome-solid-xmark: |
 
 ## Reporting a vulnerability
 
