@@ -91,7 +91,7 @@ PARAMETER max_new_tokens 256
 PARAMETER temperature 0.7
 PARAMETER top_p 0.9
 PARAMETER stop_strings "END"
-PARAMETER stop_token_ids 12, 13, 99
+PARAMETER stop_token_ids 12,13,99
 ```
 
 ### Available parameters and aliases
@@ -169,6 +169,6 @@ The parser enforces these rules when loading a Modelfile:
 - `max_new_tokens` cannot exceed `max_length` when both are set.
 - `stop_token_ids` must be non-negative integers.
 - Unknown parameters are ignored.
-- Invalid parameter values are rejected rather than partially applied.
+- Known parameters with invalid values cause Modelfile validation to fail.
 
 These rules are enforced to avoid invalid generation combinations; for example, beam search does not allow sampling penalties or sampling probabilities to be active at the same time.
