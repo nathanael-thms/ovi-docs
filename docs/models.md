@@ -34,7 +34,7 @@ Ultimately you can download the models from anywhere, as long as they are in Ope
 
 ## Running models
 
-The model can be run via any OpenVINO‑supported targets, such as CPU, NPU and GPU, target selection is explained in [available settings](#available-settings)
+The model can be run via any OpenVINO‑supported targets, such as CPU, NPU and GPU, target selection is explained in [Device settings](#device-settings). The model can be run via the model menu or directly via the command line.
 
 !!! warning
     Attempting to run a model without an IR graph(`openvino_model.xml`) will throw an error.
@@ -76,6 +76,7 @@ Each model directory can contain a `Modelfile` used to configure the runtime dev
 
 - Lines beginning with `#` are ignored.
 - Device lines use `DEVICE <target>`.
+- System prompts use `SYSTEM <prompt>` and support single-line strings, triple-quoted blocks, and heredocs.
 - Generation settings use `PARAMETER <name> <value>`.
 - Aliases are accepted for compatibility, but the canonical names below are preferred.
 - Values may be quoted when needed, for example `PARAMETER stop_strings "END"`.
@@ -85,6 +86,9 @@ Example:
 ```text
 # Select the target device
 DEVICE GPU
+
+# System prompt
+SYSTEM "You are a helpful coding assistant."
 
 # Generation settings
 PARAMETER max_new_tokens 256
@@ -147,6 +151,33 @@ Aliases accepted by the parser:
 - `AUTO`
 
 If omitted, ovi defaults to `CPU`.
+
+### System prompt
+
+The `SYSTEM` key sets the system prompt for the model. It can be specified as a string or using triple quotes for multi-line prompts.
+Here are below examples of valid system prompts:
+
+```text
+SYSTEM "You are a helpful coding assistant."
+```
+
+```text
+SYSTEM 'You are a helpful coding assistant.'
+```
+
+```text
+SYSTEM """
+You are a helpful digital assistant.
+Answer questions in a concise and clear manner.
+"""
+```
+
+```text
+SYSTEM <<EOF
+You are a helpful digital assistant.
+Answer questions in a concise and clear manner.
+EOF
+```
 
 ### Rules and validation
 
