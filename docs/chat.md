@@ -8,7 +8,9 @@ The chat is how you interact with models. You can exit it at any time by typing 
 
 ## Launching the chat
 
-To launch a chat with a model see [running models](models.md#running-models)
+To launch a chat with a model see [running models](models.md#running-models).
+
+To change generation parameters for a model, see [Modelfiles](models.md#modelfiles).
 
 ## Chat commands
 
