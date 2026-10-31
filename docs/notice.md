@@ -2,7 +2,7 @@
 icon: lucide/info
 ---
 
-# Notice(As required by Apache License 2.0)
+# Notice (As required by Apache License 2.0)
 
 ovi (OpenVINO Interface)
 Copyright 2026 Nathanael Thomas
@@ -13,6 +13,9 @@ and its contributors. It is licensed under the Apache License 2.0.
 This project utilizes third-party dependencies installed via PyPI. 
 Please refer to requirements.txt for the specific dependencies installed. 
 These dependencies are governed by their respective open-source licenses.
+
+This project also utilizes third-party dependencies installed via your distribution's respective package manager.
+Please refer to setup.sh to see the dependencies installed.
 
 Disclaimer: This project is an independent, community-driven tool and 
 is not in any way affiliated with, sponsored by, or endorsed by Intel Corporation. 
