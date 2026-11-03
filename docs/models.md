@@ -42,12 +42,22 @@ You will then be prompted to enter a name to identify the model by locally, this
 !!! tip
     In the search menu, if for whatever reason you want to pull a model under a different organisation, you can find it on HF hub, and paste the name directly from there. Search will not be supported for models not under the OpenVINO organisation.
 
-When run directly, the same outcome will be achieved, but without the search menu.
+You will then be prompted if you would like to edit the modelfile for the model now, if you type y, the actions explained in [Editing the Modelfile](#editing-the-modelfile) will be performed; if you type n or any other key, the model will be added without editing the Modelfile.
+
+!!! note
+    In a non-interactive shell, you will not be prompted to edit the Modelfile, it will be added without editing.
+
+When run directly, the same outcome will be achieved, but without the search menu or name prompt.
 
 ### Local Method
 When run via the menu, you will be prompted to enter the **absolute** path to the directory containing the model, and then a name to identify the model by locally, this must not already be used by another model, and must not be `Back` or `Exit`
 
-When run directly, the same outcome will be achieved, but without the prompts.
+You will then be prompted if you would like to edit the modelfile for the model now, if you type y, the actions explained in [Editing the Modelfile](#editing-the-modelfile) will be performed; if you type n or any other key, the model will be added without editing the Modelfile.
+
+!!! note
+    In a non-interactive shell, you will not be prompted to edit the Modelfile, it will be added without editing.
+
+When run directly, the same outcome will be achieved, but without the first two prompts.
 
 ### Other Methods
 The two listed are the only methods that can be done automatically by a wizard. You can also add models manually by placing them in the `project_root/models` directory, but you must ensure that the model is a raw OpenVINO IR model, containing an `openvino_model.xml`, and that the name of the model is not `Back` or `Exit`
@@ -71,7 +81,7 @@ This will open a menu like the following:
    qwen2.5-coder-1.5B-int4
 ```
 
-navigate the menu and hit enter on the model you would like to launch, you will then see the following:
+Navigate the menu and hit enter on the model you would like to launch, you will then see the following:
 ```
 Connected to raw model 'qwen2.5-coder:7B-int4'. Type '/exit' to quit.
 Use ↑/↓ to browse recent prompts.
@@ -91,6 +101,34 @@ This achieves the same outcome as [running via model menu](#running-via-model-me
 ## Modelfiles
 
 Each model directory can contain a `Modelfile` used to configure the runtime device and generation parameters.
+
+### Editing the Modelfile
+To edit the Modelfile, either run `ovi` and select `Edit a Modelfile`, or run `ovi edit {model name}`. If the Modelfile does not exist it will be created with the following template:
+```
+# ovi Modelfile
+# For syntax, see https://ovi.nattho.com/models/#syntax
+# Currently all the lines are commented out, you may uncomment, remove, and edit these lines as you wish
+
+# Select the target device
+# DEVICE CPU
+
+# System prompt
+# SYSTEM "You are a helpful coding assistant."
+
+# Generation settings
+# PARAMETER max_new_tokens 256
+# PARAMETER temperature 0.7
+# PARAMETER top_p 0.9
+# PARAMETER stop_strings "END"
+# PARAMETER stop_token_ids 12,13,99
+```
+
+All lines are commented out by default.
+It will then open in your default editor.
+
+You may also edit the Modelfile directly by opening it in your editor of choice, it is located at `project_root/models/{model name}/Modelfile`
+
+You may now edit the file as you wish, using the syntax below:
 
 ### Syntax
 
