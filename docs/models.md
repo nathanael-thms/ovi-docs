@@ -13,7 +13,7 @@ Models are placed in the `project_root/models` directory
 - The model must not be named `Back` or `Exit`
 
 ## Adding models
-Below are the 2 methods of adding a model, and under that what both the HF and Local method do
+Below are the two methods for adding a model, followed by detailed behaviour for both the Hugging Face (HF) and Local approaches.
 
 ### Adding via wizard
 To add a model, either run `ovi` and select `Add a Model`, or run `ovi add`, this will open a menu like this:
@@ -28,10 +28,10 @@ To add a model, either run `ovi` and select `Add a Model`, or run `ovi add`, thi
 Select the option you would like
 
 ### Adding directly
-Depending on weather you would like to add models from a local directory or from the Hugging Face Hub, you may use this syntax to do it directly:
+Depending on whether you would like to add models from a local directory or from the Hugging Face Hub, you may use this syntax to do it directly:
 
-Local: `ovi add {absolute path to directory containing model} {name to idenitfy the model by}`
-HF Hub: `ovi add {full name of model under HF Hub} {name to identify the model by}`
+Local: `ovi add {absolute path to directory containing model} {name to identify the model by}`
+HF Hub: `ovi add {organization/repository} {name to identify the model by}`
 
 An example of a valid model under HF Hub would be `OpenVINO/Qwen2.5-Coder-1.5B-Instruct-int4-ov`
 
@@ -198,6 +198,15 @@ You are a helpful digital assistant.
 Answer questions in a concise and clear manner.
 EOF
 ```
+
+!!! note
+    The system prompt allows any label, such as this:
+    ```text
+    SYSTEM <<PROMPT
+    You are a helpful digital assistant.
+    Answer questions in a concise and clear manner.
+    PROMPT
+    ```
 
 ### Rules and validation
 
