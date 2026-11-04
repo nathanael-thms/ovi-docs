@@ -12,25 +12,55 @@ Models are placed in the `project_root/models` directory
 
 - The model must not be named `Back` or `Exit`
 
-## Pulling models
+## Adding models
+Below are the two methods for adding a model, followed by detailed behaviour for both the Hugging Face (HF) and Local approaches.
 
-One place you can pull models from is HF hub, pre-converted models in raw IR format are available under the `OpenVINO Toolkit` organization
-
-Here is an example of downloading qwen2.5-coder-7B-Instruct-Int4
-```bash
-# If you do not already have huggingface-hub installed, install it, if you have it installed, make sure you have the latest version:
-# pip install huggingface-hub
-
-# Swap project_root for the path of the project root
-
-cd {project_root}/models
-
-# You may customize the directory name, remember this is the name that will be used for the model menu
-
-hf download OpenVINO/Qwen2.5-Coder-7B-Instruct-int4-ov --local-dir qwen2.5-coder:7B-int4
+### Adding via wizard
+To add a model, either run `ovi` and select `Add a Model`, or run `ovi add`, this will open a menu like this:
 ```
+↑/↓ navigate • ← back • enter launch • esc/q quit.
+============================================================
 
-Ultimately you can download the models from anywhere, as long as they are in OpenVINO IR format
+ ▸ Add a model from a local directory
+   Add a model from Hugging Face Hub
+   Exit
+```
+Select the option you would like
+
+### Adding directly
+Depending on whether you would like to add models from a local directory or from the Hugging Face Hub, you may use this syntax to do it directly:
+
+Local: `ovi add local {absolute path to directory containing model} {name to identify the model by}`
+HF Hub: `ovi add hf {organization/repository} {name to identify the model by}`
+
+An example of a valid model under HF Hub would be `OpenVINO/Qwen2.5-Coder-1.5B-Instruct-int4-ov`
+
+### Hugging Face Method
+When run via the menu, a search menu will pop up where you can search all models under the OpenVINO organisation, you must use up/down arrow keys to highlight and enter to select.
+You will then be prompted to enter a name to identify the model by locally, this must not already be used by another model, and must not be `Back` or `Exit`
+
+!!! tip
+    In the search menu, if for whatever reason you want to pull a model under a different organisation, you can find it on HF hub, and paste the name directly from there. Search will not be supported for models not under the OpenVINO organisation.
+
+You will then be prompted if you would like to edit the modelfile for the model now, if you type y, the actions explained in [Editing the Modelfile](#editing-the-modelfile) will be performed; if you type n or any other key, the model will be added without editing the Modelfile.
+
+!!! note
+    In a non-interactive shell, you will not be prompted to edit the Modelfile, it will be added without editing.
+
+When run directly, the same outcome will be achieved, but without the search menu or name prompt.
+
+### Local Method
+When run via the menu, you will be prompted to enter the **absolute** path to the directory containing the model, and then a name to identify the model by locally, this must not already be used by another model, and must not be `Back` or `Exit`
+
+You will then be prompted if you would like to edit the modelfile for the model now, if you type y, the actions explained in [Editing the Modelfile](#editing-the-modelfile) will be performed; if you type n or any other key, the model will be added without editing the Modelfile.
+
+!!! note
+    In a non-interactive shell, you will not be prompted to edit the Modelfile, it will be added without editing.
+
+When run directly, the same outcome will be achieved, but without the first two prompts.
+
+### Other Methods
+The two listed are the only methods that can be done automatically by a wizard. You can also add models manually by placing them in the `project_root/models` directory, but you must ensure that the model is a raw OpenVINO IR model, containing an `openvino_model.xml`, and that the name of the model is not `Back` or `Exit`
 
 ## Running models
 
@@ -51,7 +81,7 @@ This will open a menu like the following:
    qwen2.5-coder-1.5B-int4
 ```
 
-navigate the menu and hit enter on the model you would like to launch, you will then see the following:
+Navigate the menu and hit enter on the model you would like to launch, you will then see the following:
 ```
 Connected to raw model 'qwen2.5-coder:7B-int4'. Type '/exit' to quit.
 Use ↑/↓ to browse recent prompts.
@@ -71,6 +101,34 @@ This achieves the same outcome as [running via model menu](#running-via-model-me
 ## Modelfiles
 
 Each model directory can contain a `Modelfile` used to configure the runtime device and generation parameters.
+
+### Editing the Modelfile
+To edit the Modelfile, either run `ovi` and select `Edit a Modelfile`, or run `ovi edit {model name}`. If the Modelfile does not exist it will be created with the following template:
+```
+# ovi Modelfile
+# For syntax, see https://ovi.nattho.com/models/#syntax
+# Currently all the lines are commented out, you may uncomment, remove, and edit these lines as you wish
+
+# Select the target device
+# DEVICE CPU
+
+# System prompt
+# SYSTEM "You are a helpful coding assistant."
+
+# Generation settings
+# PARAMETER max_new_tokens 256
+# PARAMETER temperature 0.7
+# PARAMETER top_p 0.9
+# PARAMETER stop_strings "END"
+# PARAMETER stop_token_ids 12,13,99
+```
+
+All lines are commented out by default.
+It will then open in your default editor.
+
+You may also edit the Modelfile directly by opening it in your editor of choice, it is located at `project_root/models/{model name}/Modelfile`
+
+You may now edit the file as you wish, using the syntax below:
 
 ### Syntax
 
@@ -178,6 +236,15 @@ You are a helpful digital assistant.
 Answer questions in a concise and clear manner.
 EOF
 ```
+
+!!! note
+    The system prompt allows any label, such as this:
+    ```text
+    SYSTEM <<PROMPT
+    You are a helpful digital assistant.
+    Answer questions in a concise and clear manner.
+    PROMPT
+    ```
 
 ### Rules and validation
 
